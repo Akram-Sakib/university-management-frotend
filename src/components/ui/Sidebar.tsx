@@ -2,6 +2,7 @@
 
 import { USER_ROLE } from "@/constants/role";
 import { sidebarItems } from "@/constants/sidebarItems";
+import { getUserInfo } from "@/services/auth.services";
 import { Layout, Menu } from "antd";
 import { useState } from "react";
 
@@ -10,7 +11,7 @@ const { Sider } = Layout;
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
-  const role = USER_ROLE.STUDENT;
+  const { role } = getUserInfo() as any;
 
   return (
     <Sider

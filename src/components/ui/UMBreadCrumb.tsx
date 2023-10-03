@@ -30,7 +30,14 @@ const UMBreadCrumb = ({ items }: Props) => {
     }),
   ];
 
-  return <Breadcrumb items={breadCrumbItems} />;
+  return (
+    <Breadcrumb
+      style={{
+        marginBottom: "20px",
+      }}
+      items={breadCrumbItems}
+    />
+  );
 };
 
 export default UMBreadCrumb;

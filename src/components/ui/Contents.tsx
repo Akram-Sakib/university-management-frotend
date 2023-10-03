@@ -2,7 +2,7 @@
 
 import { Layout } from "antd";
 import React from "react";
-import UMBreadCrumb from "./UMBreadCrumb";
+import Header from "./Header";
 
 const { Content } = Layout;
 
@@ -11,27 +11,20 @@ type Props = {
 };
 
 const Contents = ({ children }: Props) => {
-  const base = "admin";
-
   return (
     <Content
       style={{
         minHeight: "100vh",
       }}
     >
-      <UMBreadCrumb
-        items={[
-          {
-            label: `${base}`,
-            link: `/${base}`,
-          },
-          {
-            label: `student`,
-            link: `/${base}/student`,
-          },
-        ]}
-      />
-      {children}
+      <Header />
+      <div
+        style={{
+          padding: "10px",
+        }}
+      >
+        {children}
+      </div>
     </Content>
   );
 };

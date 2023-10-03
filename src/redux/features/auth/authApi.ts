@@ -1,3 +1,4 @@
+import { tagTypes } from "@/redux/tag-types";
 import { apiSlice } from "../api/apiSlice";
 
 const AUTH_URL = "/auth";
@@ -8,9 +9,9 @@ const authApi = apiSlice.injectEndpoints({
       query: (loginData) => ({
         url: `${AUTH_URL}/login`,
         method: "POST",
-        body: loginData,
+        data: loginData,
       }),
-      invalidatesTags: ["User"],
+      invalidatesTags: [tagTypes.user],
     }),
   }),
 });
